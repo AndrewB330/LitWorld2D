@@ -108,7 +108,7 @@ public:
         DrawGrid(1, {0.9, 0.9, 0.9});
 
         for (const auto &j : world.joints) {
-            DrawLine(j.p1->position, j.p2->position, {0.25, 0.65, 0.25});
+            DrawLine(j.p1->position, j.p2->position, {0.55, 0.55, 0.55});
         }
 
         for (const auto &v : world.volumes) {
@@ -119,11 +119,17 @@ public:
                 center += p->position;
             }
             center /= vertices.size();
-            DrawPolygon(vertices, center, {0.75, 0.95, 0.75}, true, 0.8f);
+            DrawPolygon(vertices, center, {0.99, 0.7, 0.1}, true, 0.8f);
         }
 
         for (const auto &p : world.particles) {
-            DrawCircle(p.position, p.radius, {0.25, 0.85, 0.25}, true);
+            if (p.radius == 0.051f) {
+                DrawCircle(p.position, p.radius, {0.95, 0.25, 0.25}, true);
+            } else if (p.radius == 0.052f) {
+                DrawCircle(p.position, p.radius, {0.99, 0.7, 0.1}, true);
+            } else {
+                DrawCircle(p.position, p.radius, {0.25, 0.85, 0.25}, true);
+            }
         }
 
         for (const auto &b : world.boxes) {
@@ -147,14 +153,14 @@ public:
             vec2 pos = ScreenToWorld(event.motion.x, event.motion.y);
             static int t = 0; t++; // just a number sequence, to generate some "random" numbers with sin, cos
             if (type == 0) {
-                world.spawn_particle(pos, 0.2f);
+                world.spawn_particle(pos, 0.3f + sinf((float)t) * 0.2f);
             }
             if (type == 1) {
-                SpawnSoftBox(pos, vec2(sin(t), cos(t)) * 0.3f + 0.5f, cosf((float)t), 0.05f);
+                SpawnSoftBox(pos, vec2(sin(t), cos(t)) * 0.3f + 0.5f, cosf((float)t), 0.051f);
             }
             if (type == 2) {
                 float size = sinf((float)t) * 0.3f + 0.5f;
-                SpawnInflatedBody(pos, (int) (size * 45 + 1), size, 0.05f);
+                SpawnInflatedBody(pos, (int) (size * 45 + 1), size, 0.052f);
             }
         }
         if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_1) {

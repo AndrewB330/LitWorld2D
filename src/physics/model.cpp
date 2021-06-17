@@ -62,7 +62,7 @@ void World::update(float delta_time) {
                 ivec2 next_grid_pos = grid_pos + ivec2(dx, dy);
                 if (!check_grid_pos(next_grid_pos)) continue;
                 for (auto &p2 : grid[next_grid_pos.x][next_grid_pos.y]) {
-                    if (p.radius > p2->radius || p.radius == p2->radius && &p <= p2) {
+                    if (p.radius < p2->radius || p.radius == p2->radius && &p <= p2) {
                         continue;
                     }
                     solve(&p, p2, delta_time);

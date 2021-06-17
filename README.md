@@ -15,4 +15,5 @@ So it is not very stable and sometimes can't converge. It is done for tutorials.
 
 ### Demo
 
-![Demo](/images/all.gif?raw=true)
+![Demo](/images/demo.png?raw=true)
+![Demo](/images/demo.gif?raw=true)
