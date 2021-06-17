@@ -1,6 +1,6 @@
 ![Demo](/images/logo_small.png?raw=true)
-# LitWorld2D
-It is a simple 2d physics engine in 300 lines of code. It has following features implemented:
+
+**LitWorld2D** - simple 2d physics engine in 300 lines of code. It has following features implemented:
 - Particles
 - Boxes
 - Spring joints
