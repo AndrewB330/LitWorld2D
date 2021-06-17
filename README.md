@@ -1,3 +1,4 @@
+![Demo](/images/logo_small.png?raw=true)
 # LitWorld2D
 It is a simple 2d physics engine in 300 lines of code. It has following features implemented:
 - Particles
@@ -5,7 +6,7 @@ It is a simple 2d physics engine in 300 lines of code. It has following features
 - Spring joints
 - "Inflated" bodies
 
-This physics engine does support impulse accumulation or warm-starting. 
+This physics engine doesn't support impulse accumulation or warm-starting or any other "smart" techniques. 
 So it is not very stable and sometimes can't converge. It is done for tutorials.
 
 ### Dependencies
