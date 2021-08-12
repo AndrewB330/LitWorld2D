@@ -18,3 +18,9 @@ So it is not very stable and sometimes can't converge. It is done for tutorials.
 
 ![Demo](/images/demo.png?raw=true)
 ![Demo](/images/demo.gif?raw=true)
+
+### License
+
+MIT License
+
+Copyright (c) 2021 Andrii Borziak
